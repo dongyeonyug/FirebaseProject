@@ -68,7 +68,7 @@ node_modules/
 # dataconnect generated files
 .dataconnect
 
-/public/
+public/
 
 # Firebase 설정 파일 (일반적으로 추적하지 않음)
 .firebaserc
