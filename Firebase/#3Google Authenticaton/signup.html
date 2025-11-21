@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+    <link href="./css/style.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="./js/signup.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jiangts/JS-OTP/dist/jsOTP.min.js"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white shadow-lg rounded-lg w-11/12 sm:w-96 p-6">
+      <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">
+        회원가입
+      </h1>
+
+      <form
+        id="signup-form"
+        class="space-y-4"
+        autocomplete="off"
+        onsubmit="return false;"
+      >
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700"
+            >이름</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="이름을 입력하세요"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700"
+            >이메일</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="이메일을 입력하세요"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          />
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700"
+            >비밀번호</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="비밀번호를 입력하세요"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          />
+        </div>
+        <div>
+          <label
+            for="confirm-password"
+            class="block text-sm font-medium text-gray-700"
+            >비밀번호 확인</label
+          >
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+            placeholder="비밀번호를 다시 입력하세요"
+            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+          />
+        </div>
+
+        <div id="qr-code-container" class="hidden text-center space-y-4">
+          <p class="text-sm text-gray-600">
+            Google Authenticator로 아래 QR 코드를 스캔하세요
+          </p>
+          <div id="qr-code" class="flex justify-center"></div>
+          <div>
+            <label
+              for="otp-code"
+              class="block text-sm font-medium text-gray-700"
+            >
+              인증번호
+            </label>
+            <input
+              type="text"
+              id="otp-code"
+              name="otp-code"
+              placeholder="6자리 인증번호를 입력하세요"
+              maxlength="6"
+              pattern="[0-9]{6}"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            />
+          </div>
+        </div>
+
+        <div
+          id="error-message"
+          class="hidden text-red-500 text-sm text-center"
+        ></div>
+
+        <button
+          id="signup-button"
+          type="submit"
+          class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          회원가입
+        </button>
+      </form>
+      <p class="mt-6 text-sm text-center text-gray-600">
+        이미 계정이 있으신가요?
+        <a href="login.html" class="text-blue-600 hover:underline">로그인</a>
+      </p>
+    </div>
+  </body>
+</html>
